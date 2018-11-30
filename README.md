@@ -32,6 +32,13 @@ Where bash fails :-
 7. Handling Script Arguments
 8. Shell Functions
 
+### Special Command  Used ###
+
+```
+#!/bin/bash -x  :- Is used to on the debugging mode of the bash
+set -x and set +x :- If want to on the debugging mode between few lines
+```
+
 ### Script 1:- Hello World Script ###
 ```
 #!/bin/bash
