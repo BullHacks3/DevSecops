@@ -39,6 +39,16 @@ Command              |          Explanation
 #!/bin/bash -x  :-   | Is used to on the debugging mode of the bash
 set -x and set +x :- | If want to on the debugging mode between few lines
 
+### Difference between [ ] and [[ ]]
+
+``` Basically [ is test command in linux 
+    1. Harder to use
+    2. Only use for portability (help test)
+   [[ .. ]] is a bash extension
+     1. Command with special syntac
+     2. No quotes needed around variables  (help [[)
+```
+
 ### Script 1:- Hello World Script ###
 ```
 #!/bin/bash
