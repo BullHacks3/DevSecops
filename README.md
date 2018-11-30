@@ -42,7 +42,7 @@ set -x and set +x :- | If want to on the debugging mode between few lines
  $?                  | Contains exit status for last command
  ${#var}             | Used to get the length of variable
 ### Arithemtic Tests
-     [[ arg1 OP arg2 ]]   |  Details
+[[ arg1 OP arg2 ]]        |  Details
 --------------------------|----------------------------------
       -eq                 |  Equality
       -gt 		  |  Greater Than
