@@ -40,9 +40,19 @@ echo "Hello World"
 ```
 Name of the script :- hello_world.sh
 Command            :- bash hello_world.sh
+Output             :- Hello World
 ```
 
-
+### Scirpt 2:- Command Line Argument ###
+```
+#!/bin/bash
+echo "Hello $1"
+```
+```
+Name of the script :- command_line_argument.sh
+Command            :- bash command_line_argument.sh Bakul
+Output             :- Hello Bakul
+```
 
 
 
