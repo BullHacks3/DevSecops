@@ -85,3 +85,17 @@ Output             :- Hello B@kul Gupt@
                       Hello B@kul Gupt@
 ```
 
+### Scirpt 5:- Read from user using prompt  ###
+```
+#!/bin/bash
+read -p "Enter your name:- " name
+echo "Hello $name"
+```
+```
+Name of the script :- read_prompt.sh
+Command            :- bash read_prompt.sh
+Input :-
+Enter your name:- Bakul Gupta
+Output:-
+Hello Bakul Gupta
+```
