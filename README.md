@@ -54,5 +54,17 @@ Command            :- bash command_line_argument.sh Bakul
 Output             :- Hello Bakul
 ```
 
+### Scirpt 3:- Command Substitution ###
+```
+#!/bin/bash
+echo date
+echo $(date)
+```
+```
+Name of the script :- command_substitution.sh
+Command            :- bash command_substituion.sh
+Output             :- date
+                      Fri Nov 30 19:54:14 IST 2018
+```
 
 
