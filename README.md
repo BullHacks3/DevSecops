@@ -37,6 +37,10 @@ Where bash fails :-
 #!/bin/bash
 echo "Hello World"
 ```
+```
+Name of the script :- hello_world.sh
+Command            :- bash hello_world.sh
+```
 
 
 
