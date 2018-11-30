@@ -67,4 +67,21 @@ Output             :- date
                       Fri Nov 30 19:54:14 IST 2018
 ```
 
+### Scirpt 4:- Variable  ###
+```
+#!/bin/bash
+Fname="B@kul"
+Lname="Gupt@"
+
+echo "Hello $Fname $Lname"
+echo "Hello ${Fname} ${Lname}"
+echo Hello $Fname $Lname
+```
+```
+Name of the script :- variable.sh
+Command            :- bash variable.sh
+Output             :- Hello B@kul Gupt@
+		      Hello B@kul Gupt@
+                      Hello B@kul Gupt@
+```
 
