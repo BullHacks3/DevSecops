@@ -34,10 +34,10 @@ Where bash fails :-
 
 ### Special Command  Used ###
 
-```
-#!/bin/bash -x  :- Is used to on the debugging mode of the bash
-set -x and set +x :- If want to on the debugging mode between few lines
-```
+Command              |          Explanation
+---------------------|---------------------------------------------------
+#!/bin/bash -x  :-   | Is used to on the debugging mode of the bash
+set -x and set +x :- | If want to on the debugging mode between few lines
 
 ### Script 1:- Hello World Script ###
 ```
