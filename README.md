@@ -106,3 +106,19 @@ Enter your name:- Bakul Gupta
 Output:-
 Hello Bakul Gupta
 ```
+### Scirpt 6:- If Check   ###
+```
+#!/bin/bash
+Fname="Bakul"
+
+if [ $Fname == "Bakul" ] ;
+then
+	echo "Hello Bakul"
+fi
+```
+```
+Name of the script :- if_check.sh
+Command            :- bash if_check.sh
+Output             :- Hello Bakul
+```
+
