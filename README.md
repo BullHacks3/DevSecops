@@ -141,3 +141,14 @@ Command            :- bash if_check.sh
 Output             :- Hello Bakul
 ```
 
+### Scirpt 7:- Length Of Variable   ###
+```
+#!/bin/bash
+Variable="Bakul Gupta"
+echo "The length of string ${Variable} is ${#Variable} "
+```
+```
+Name of the script :- length_variable.sh
+Command            :- bash length_variable.sh
+Output             :- The length of string Bakul Gupta is 11 
+```
