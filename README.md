@@ -32,6 +32,12 @@ Where bash fails :-
 7. Handling Script Arguments
 8. Shell Functions
 
+### Script 1:- Hello World Script ###
+```
+#!/bin/bash
+echo "Hello World"
+```
+
 
 
 
