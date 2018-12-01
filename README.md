@@ -116,6 +116,15 @@ Variables
 	1.4 declare +i num [ unset the variable ]
 	1.5 let command for c style executions
         1.6 Read Only variable are declare with -r attribute
+
+Arrays
+	1.1 Special type of data structure (variable),that can hold mutiple values
+	1.2 Values can be stored and retrieved by index
+	1.3 Storing a value
+		1.3.1 x[0]="Bakul"
+	1.4 Retrieving a value
+		1.4.1 ${x[0]} -> to get single value
+		1.4.2 ${x[@]} -> to get entire array
 ```
  
 
