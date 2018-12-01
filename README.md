@@ -58,6 +58,27 @@ set -x and set +x :- | If want to on the debugging mode between few lines
      1. Command with special syntac
      2. No quotes needed around variables  (help [[)
 ```
+### I/O Commmand Help
+```
+1. echo
+	1.1 Prints its arguments to standard output,followed by a newline
+	1.2 -n suppresses the new line
+	1.3 -e allows use of escape sequences
+		1.3.1 \t : tab
+		1.3.2 \b backspace
+
+2. printf
+	2.1 Use to perform more sophisticated operations
+	2.2 It makes use of format string
+	2.3 Examples:-
+		2.3.1 printf "Hello World \n"
+		2.3.2 printf "Hello %s,Welcome " $USER
+		2.3.3 printd "|%20s |%20s |%20s |\n" $(ls)
+        2.4 -v option is used to store the output to a variable
+		2.4.1 printf -v name "Hello World" ;printf $name
+
+```
+ 
 
 ### Script 1:- Hello World Script ###
 ```
