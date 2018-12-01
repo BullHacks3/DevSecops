@@ -200,3 +200,30 @@ Name of the script :- length_variable.sh
 Command            :- bash length_variable.sh
 Output             :- The length of string Bakul Gupta is 11 
 ```
+
+### Scirpt 8:- While Loop   ###
+```
+#!/bin/bash
+
+Initial=2
+while [[ $Initial -ne 22 ]];
+do
+        echo $Initial
+        Initial=$(($Initial+2))
+done
+```
+```
+Name of the script :- while.sh
+Command            :- bash while.sh
+Output             :- 
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+```
