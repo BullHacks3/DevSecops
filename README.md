@@ -253,3 +253,28 @@ simple
 for
 loop
 ```
+
+### Scirpt 10:- For Loop In C Style   ###
+```
+#!/bin/bash
+
+for (( Initial=2;Initial<22;Initial=Initial+2 ))
+do
+	echo $Initial
+done
+```
+```
+Name of the script :- for_c_style.sh
+Command            :- bash for_c_style.sh
+Output             :- 
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+```
