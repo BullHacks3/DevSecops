@@ -41,6 +41,9 @@ set -x and set +x :- | If want to on the debugging mode between few lines
  $#                  | Number of commands line arguemnts sccript received
  $?                  | Contains exit status for last command
  ${#var}             | Used to get the length of variable
+ ${#array[@]}        | Count the number of elements in the array
+ ${!array[@]}        | To show all the indices in the array
+
 ### Arithemtic Tests
 [[ arg1 OP arg2 ]]  |  Details
 --------------------|---------------
@@ -125,6 +128,10 @@ Arrays
 	1.4 Retrieving a value
 		1.4.1 ${x[0]} -> to get single value
 		1.4.2 ${x[@]} -> to get entire array
+	1.5 Initialization of array
+		1.5.1 array=(a e i o u)
+	1.6 Bash arrays cannot be exported
+	1.7 Bash 4 supports associative arrays
 ```
  
 
@@ -327,4 +334,25 @@ Command		   :- bash case.sh BaKuL
 Output             :- BaKuL found
 Command            :- bash case.sh A
 Output             :- No matching keyword found
+```
+
+### Scirpt 12:- Array In Bash   ###
+```
+#!/bin/bash
+
+array=(First 2 Third 4 Fifth)
+echo "Number of values in array is :- ${#array[@]}"
+for i in ${array[@]};
+do
+	printf "%s\t" $i
+done
+printf "\n"
+
+```
+```
+Name of the script :- array.sh
+Command            :- bash array.sh
+Output             :-
+Number of values in array is :- 5
+First	2	Third	4	Fifth	
 ```
