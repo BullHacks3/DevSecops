@@ -103,6 +103,11 @@ Redirection
 		1.2.3 2>&1 redirects stderr into stdout
 		1.2.4 Sendinf both error and output to a single file( > log 2>&1)
 
+Command Grouping
+	1.1 Group commands with {}
+	1.2 I/O redirection can be applied to whole group
+	1.3 The status of group will be the status of the last command of the group.
+	1.4 { echo "Hello";cd /; ls }
 ```
  
 
