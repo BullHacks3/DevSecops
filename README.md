@@ -108,6 +108,13 @@ Command Grouping
 	1.2 I/O redirection can be applied to whole group
 	1.3 The status of group will be the status of the last command of the group.
 	1.4 { echo "Hello";cd /; ls }
+
+Variables
+        1.1 Variables are the namespaces that are used to store the value
+	1.2 declare command used for variable declaration
+	1.3 declare -i num [ to hole only numeric values ]
+	1.4 declare +i num [ unset the variable ]
+	1.5 let command for c style executions
 ```
  
 
