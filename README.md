@@ -58,8 +58,9 @@ set -x and set +x :- | If want to on the debugging mode between few lines
      1. Command with special syntac
      2. No quotes needed around variables  (help [[)
 ```
-### I/O Commmand Help
+### Commmand Help
 ```
+Output Commands
 1. echo
 	1.1 Prints its arguments to standard output,followed by a newline
 	1.2 -n suppresses the new line
@@ -76,6 +77,31 @@ set -x and set +x :- | If want to on the debugging mode between few lines
 		2.3.3 printd "|%20s |%20s |%20s |\n" $(ls)
         2.4 -v option is used to store the output to a variable
 		2.4.1 printf -v name "Hello World" ;printf $name
+Input Commands
+1. read
+	1.1 Reads input into a variable
+        1.2 -n or -N specifies number of characters
+	1.3 -s suppress the output
+	1.4 -p option for prompt
+IFS [ Input Field Seperator ]
+ 
+Standard Streams
+	1.1 Three types i.e input,output,error
+	1.2 Represented by number (file descriptor)
+ 	1.3 Standard Input (0) (/dev/stdin)
+	1.4 Standard Output (1) (/dev/stdout)
+	1.5 Standard Error (2) (/dev/stderr)
+        1.6 /dev/null discards all data sent to it
+Redirection
+	1.1 Redirection 1
+		1.1.1 Input redirection (<)
+		1.1.2 Output redirection (>)
+		1.1.3 Pipes ( ls | grep 'bakul')
+ 	1.2 Redirection 	
+		1.2.1 2>/dev/null discards all errors
+		1.2.2 1>&2 sends output to stderr
+		1.2.3 2>&1 redirects stderr into stdout
+		1.2.4 Sendinf both error and output to a single file( > log 2>&1)
 
 ```
  
