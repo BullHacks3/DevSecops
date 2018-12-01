@@ -132,6 +132,32 @@ Arrays
 		1.5.1 array=(a e i o u)
 	1.6 Bash arrays cannot be exported
 	1.7 Bash 4 supports associative arrays
+
+Script Arguments
+Positional Arguments
+	1.1 Command line arguemnts $1,$2,$3..etc
+	1.2 $0 holds the name of script
+	1.3 $@ all the command arguments in the script
+Shift Command
+	1.1 Manipulates the arguments
+	1.2 Removes the first argument
+        1.3 All positional parameters shift
+		1.3.1 $2 -> $1
+		1.3.2 $3 -> $2
+		1.3.3 $4 -> $3
+	1.4 $# lowered by 1
+	1.5 shift 3 will remove first three arguments
+Getopts
+	1.1 Expect options to start with a dash
+	1.2 getopts opstring name
+	1.3 opstring
+		1.3.1 a list of expected options
+		1.3.2 "ab" will handle option -a and/or -b
+		1.3.3 Append : to options that take an argument
+		1.3.4 "a:b" will let a take an argument,but not b
+        1.4 Two arguments
+		1.4.1 ${OPTARG}
+		1.4.2 ${OPTIND}
 ```
  
 
@@ -355,4 +381,27 @@ Command            :- bash array.sh
 Output             :-
 Number of values in array is :- 5
 First	2	Third	4	Fifth	
+```
+
+### Scirpt 13:- Functions In Bash   ###
+```
+#!/bin/bash
+
+function add_string()
+{
+firstString=${1:-"First"}
+secondString=${2:-"Second"}
+
+echo "Concatenation Of Two Strings is :- ${firstString}${secondString}"
+}
+add_string $1 $2
+```
+```
+Name of the script :- function_add_string.sh
+Command            :- bash function_add_string.sh
+Output             :- FirstSecond
+Command            :- bash function_add_string.sh Apple
+Output             :- AppleSecond
+Command            :- bash function_add_string.sh Bakul Gupta
+Output             :- BakulGupta
 ```
