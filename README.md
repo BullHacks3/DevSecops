@@ -278,3 +278,31 @@ Output             :-
 18
 20
 ```
+### Scirpt 11:- Case Example   ###
+```
+#!/bin/bash
+
+
+Check=${1:-"Bakul"}
+# If value of argumens is passed ,then it is assigned to Check variable,otherwise default value is set to Bakul
+
+case $Check in
+	BAKUL)
+		echo "BAKUL found" ;;
+	BaKuL)
+		echo "BaKuL found" ;;
+	Bakul)
+		echo "Bakul found" ;;
+	*)
+		echo "No matching keyword found" ;;
+esac
+```
+```
+Name of the script :- case.sh
+Command            :- bash case.sh
+Output             :- Bakul found
+Command		   :- bash case.sh BaKuL
+Output             :- BaKuL found
+Command            :- bash case.sh A
+Output             :- No matching keyword found
+```
