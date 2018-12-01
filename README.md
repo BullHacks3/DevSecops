@@ -227,3 +227,29 @@ Output             :-
 18
 20
 ```
+
+### Scirpt 9:-Simple For Loop Example   ###
+```
+#!/bin/bash
+
+iterator="Hello this is example of simple for loop"
+
+for i in $iterator;
+do
+	echo $i
+done
+
+```
+```
+Name of the script :- for_simple.sh
+Command            :- bash for_simple.sh
+Output             :- 
+Hello
+this
+is
+example
+of
+simple
+for
+loop
+```
