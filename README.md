@@ -43,6 +43,7 @@ set -x and set +x :- | If want to on the debugging mode between few lines
  ${#var}             | Used to get the length of variable
  ${#array[@]}        | Count the number of elements in the array
  ${!array[@]}        | To show all the indices in the array
+ =~                  | Does regular expression matching
 
 ### Arithemtic Tests
 [[ arg1 OP arg2 ]]  |  Details
@@ -158,6 +159,32 @@ Getopts
         1.4 Two arguments
 		1.4.1 ${OPTARG}
 		1.4.2 ${OPTIND}
+
+Parameter Expansion
+	1. Allows powerful string manipulation	
+	2. ${#var} : Shows the length of var
+	3. Removing a pattern
+		3.1 Removing a part of string
+			3.1.1 ${var#pattern}  :  Removes shortest match from begin of string
+			3.1.2 ${var##pattern} :  Removes longest match from begin of string
+			3.1.3 ${var%pattern}  :  Removes shortest match from end of string
+			3.1.4 ${var%%pattern} :  Removes longest  match from end of string
+		3.2 Examples conside try="/home/bakul/try.txt"
+			3.2.1 ${try#*/}  : home/bakul/try.txt
+			3.2.2 ${try##*/} : try.txt
+			3.2.3 ${try%.*}  : /home/bakul/try
+			3.2.4 ${try%/*}  : /home/bakul
+	4. Search and Replace pattern
+		4.1 ${var/pattern/string} : Substitute first match with string
+	5. Default values
+		5.1 ${var:-value} : Will evaluate to "value" if var is empty or unset
+		5.2 ${var-value}  : Will evaluate to "value" if var is unset
+		5.3 ${var:=value} : Will evaluate to "value" if var is empty or unset and assigns it to var
+		5.4 ${var=value}  : Will evaluate to "value" if var is unset and assigns it to var
+	6. Conditional Expression Patterns
+		6.1 ==,!= do pattern matching . Example :- [[ $file = *txt ]]
+		6.2 Use quotes to force string matching
+			6.2.1 [[ $var == "[0-9]*" ]] matches the string "[0-9]*" 
 ```
  
 
