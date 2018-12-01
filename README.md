@@ -115,6 +115,7 @@ Variables
 	1.3 declare -i num [ to hole only numeric values ]
 	1.4 declare +i num [ unset the variable ]
 	1.5 let command for c style executions
+        1.6 Read Only variable are declare with -r attribute
 ```
  
 
