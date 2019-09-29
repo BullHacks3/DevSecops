@@ -26,14 +26,20 @@ Kubernetes is a docker orchestration system, which is useful for the purpose of
 
 ### Services
 ### Deployments
-- Maintaining the state desired state of various resources and references
-
+- Define as well as maintain the desired state of resources and references
 |Parts|Explaination|
 |-----|------------|
 |apiVersion||
 |kind| specifies the resource of object to be create|
 |metadata| used to identify a resource uniquely in k8s|
 |spec| declared the desired state of an object or resource |
+
+- Deployments related commands
+Various commands used for the deploymenys:
+    - kubectl get deployments : to get list of all the deployments
+    - kubectl rollout status  : get status of deployment roll outs
+    - kubectl set image       : set the image of deployment
+    - kubectl rollout history : history of the rollout
 ```
 apiVersion: apps/v1
 kind: deployment
