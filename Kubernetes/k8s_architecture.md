@@ -49,3 +49,11 @@ Few options available:
     - bare pods
     - job
     - daemonset
+
+### How to check the health of given pod ?
+
+Provides two type of definition for health checking:
+- Readiness Probes : determine when a pod is in "ready" state
+- Liveness Probes  : determine when a pod is in "healthy" or "unhealthy" state
+
+Note: **Probes are defined in the deployment definition**
