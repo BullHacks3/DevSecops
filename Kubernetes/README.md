@@ -80,6 +80,20 @@ kubectl describe pod <pod_name>
 ### Services
 ### Deployments
 - Define as well as maintain the desired state of resources and references
+- Related to updates and rollbacks
+- Create multiple replicas
+- Upgrade strategies
+- Scale up or down
+- Pause or resume deployment process
+
+**Different type of deployments**
+1. Recreate 
+>Involves down time of a service, as initially it terminates v1 pods and then will start new v2 pods
+2. Rolling Update
+3. Canary 
+> When we want  to update some pods in a cluster
+4. Blue /Green 
+
 |Parts|Explaination|
 |-----|------------|
 |apiVersion||
@@ -93,9 +107,35 @@ Various commands used for the deploymenys:
     - kubectl rollout status  : get status of deployment roll outs
     - kubectl set image       : set the image of deployment
     - kubectl rollout history : history of the rollout
+
+
+Example of deployment manifest file
 ```
 apiVersion: apps/v1
-kind: deployment
+kind: Deployment
+metadata:
+    name: figlet-deploy
+    labels:
+        env: staging
+spec:
+    replicas: 3
+    selector:
+        matchLabels:
+            env: staging
+    template:
+       metadata:
+            labels:
+                env: staging
+       spec:
+            containers:
+            - name: figlet-deploy
+              image: bakulgupta/figlet:v2
+
+```
+
+```
+apiVersion: apps/v1
+kind: Deployment
 metadata:
     name:
     namespace:
@@ -109,6 +149,7 @@ spec:
     templates:
 
 ```
+
 ### ReplicationController
 - Ensure that specified number of pods are running at all time
 - Replication controller and pods are associated with the "labels"
