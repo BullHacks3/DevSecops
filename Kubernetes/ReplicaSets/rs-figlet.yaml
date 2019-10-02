@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+    name: rs-figlet
+spec:
+    selector:
+        matchLabels:
+            env: staging
+    replicas: 2
+    template:
+        metadata:
+            name: figlet-rs
+            labels:
+                env: staging
+        spec:
+            containers:
+            - name: figlet-container
+              image: bakulgupta/figlet:v2
