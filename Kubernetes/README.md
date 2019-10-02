@@ -136,11 +136,56 @@ spec:
               image: bakulgupta/figlet:v2
 ```   
 
-
-
-### ReplicaController
 ### ReplicaSet
+- Replicaset is next generation of relicationcontroller
 
+|Resource_Name| Selector|
+|-------------|---------|
+|Replication_Controller|Equality Based selector|
+|RelicaSet|Set based selector|
+
+In k8s selectors are of two types:
+1. Equality based selector
+2. Set based selector
+
+|Name|Operators|
+|----|----------|
+|Equality Based Selector|= == != Example: env = production |
+|Set Based Selector|in notin exists Example: env in (production,staging)|
+
+**ReplicationController Manifest**
+```
+selector:
+    env: prod
+```
+**ReplicaSet Manifest**
+```
+selector:
+    matchExpressions:
+    - {key:env,operator:in,values:[production,staging]}
+```
+
+Example of manifest file replicaset
+```
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+    name: rs-figlet
+spec:
+    selector:
+        matchLabels:
+            env: staging
+    replicas: 2
+    template:
+        metadata:
+            name: figlet-rs
+            labels:
+                env: staging
+        spec:
+            containers:
+            - name: figlet-container
+              image: bakulgupta/figlet:v2
+```
 
 ### Components and their functions
 
