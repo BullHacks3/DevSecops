@@ -285,6 +285,49 @@ spec:
 **ClusterIP Service**
 - Used when we need to connect various services in the cluster only.
 - Example: Connect frontend service with backend service
+### Storage Volumes ###
+**How to persist the  data beyond the pod lifecycle?**
+- It means how to deploy statefull application in the k8s
+- Volumes allows to ensure persistence in the pods
+
+**Type of volumes**
+1. Ephemeral [ same lifetime as of pods ]
+2. Durable   [ beyond pods lifetime ]
+
+**Volumes types**
+- configMap
+- emptyDir
+- hostPath
+- persistentVolumeClaim
+- secret
+
+1. emptyDir
+- Empty directory is created in the node, when a pod is created
+- The directory will remain till the time pod is running
+- Once a pod is  removed, all the data from directory will be wiped out  forever
+
+Use Case:
+- Temporary Space
+
+#### EmptyDir Manifest File ####
+```
+apiVersion: v1
+kind: Pod
+metadata:
+    name: empty-dir
+spec:
+    containers:
+    - name: figlet-example
+      image: bakulgupta/figlet:v2
+    volumes:
+    - name: cache-volume
+      emptyDir: {}
+```
+
+2. hostPath
+- mount a specific file or directory from the host to the pod
+- data persists after the pod dies
+
 
 
 ### Components and their functions
