@@ -176,6 +176,7 @@ spec:
             - name: figlet
               image: bakulgupta/figlet:v2
 ```   
+**Note: When we create a deployment, replica sets and pods are automatically created**
 
 ### ReplicaSet
 - Replicaset is next generation of relicationcontroller
@@ -227,6 +228,64 @@ spec:
             - name: figlet-container
               image: bakulgupta/figlet:v2
 ```
+### Services 
+- Ensure communication between various pods, for inter-connecting various microservices
+- Exposed the microservice to the entire world
+- Mechanism to ensure grouping of pods
+
+**Type Of Services**
+1. ClusterIP
+2. NodePort
+3. LoadBalancer
+
+**Node Port Service in K8s**
+
+|Port Types| Function|
+|----------|---------|
+| Port|Defines the service port|
+| TargetPort| Defines the pod port|
+| NodePort| Defines the node port|
+
+**NodePort Manifest File**
+```
+apiVersion: v1
+kind: Service
+metadata:
+    name: figlet-service
+spec:
+    type: NodePort
+    selector:
+        matchLabels:
+            env: staging
+    ports:
+    - nodePort: 30000
+      port: 80
+      targetPort: 80
+```
+
+**Load Balancing Service**
+
+Example: Load Balancer Manifest File
+```
+apiVersion: v1
+kind: Service
+metadata:
+    name: lb-figlet
+spec:
+    selector:
+        matchLabels:
+            env: staging
+    type: LoadBalancer
+    port:
+    - nodePort: 8000
+      port: 80
+      targetPort: 80
+```
+
+**ClusterIP Service**
+- Used when we need to connect various services in the cluster only.
+- Example: Connect frontend service with backend service
+
 
 ### Components and their functions
 
