@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bakulgupta-figlet
+  labels:
+    env: testing
+spec:
+  selector:
+    matchLabels:
+      env: testing
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        env: testing
+    spec:
+      containers:
+      - name: bakulgupta-figlet
+        image: bakulgupta/figlet:v2
+        
+      
